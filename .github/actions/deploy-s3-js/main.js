@@ -4,18 +4,19 @@ const github = require('@actions/github');
 const exec = require('@actions/exec');
 
 function run() {
+  core.notice('Starting deploy to S3');
+
   // Get input values
   const bucket = core.getInput('bucket', { required: true });
   const region = core.getInput('bucket-region', { required: true });
   const distFolder = core.getInput('dist-folder', { required: true });
 
-  // Upload files to S3
+  // env:
+  //   AWS_ACCESS_KEY_ID: secrets.AWS_ACCESS_KEY_ID
+  //   AWS_SECRET_ACCESS_KEY: secrets.AWS_SECRET_ACCESS_KEY
 
-  core.notice('Starting deploy to S3');
-  // Log all inputs
-  core.info(`Bucket: ${bucket}`);
-  core.info(`Region: ${region}`);
-  core.info(`Dist folder: ${distFolder}`);
+  const s3Uri = `s3://${bucket}`;
+  exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${region} --delete`);
 }
 
 run();
