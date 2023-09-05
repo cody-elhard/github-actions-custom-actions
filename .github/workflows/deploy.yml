@@ -9,8 +9,10 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
+      - name: Log github workflows code
+        run: ls ./.github/actions/setup
       - name: Setup Project
-        uses: .github/actions/setup/action.yml
+        uses: ./.github/actions/setup/action.yml
         with:
           node-path: node_modules
       - name: Lint code
