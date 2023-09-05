@@ -8,7 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      - name: Log code
+        run: ls
       - name: Setup Project
         uses: ./.github/actions/setup/action.yml
         with:
