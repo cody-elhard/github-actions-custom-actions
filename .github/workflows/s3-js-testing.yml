@@ -1,0 +1,9 @@
+name: Deploy to S3 using Javascript Github Action
+on: [push]
+
+jobs:
+  information:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Custom Action
+        uses: ./.github/actions/deploy-to-s3
