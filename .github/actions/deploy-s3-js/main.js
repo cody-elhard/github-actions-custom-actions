@@ -17,6 +17,10 @@ function run() {
 
   const s3Uri = `s3://${bucket}`;
   exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${region} --delete`);
+
+  // Return the url to the website as an output
+  const url = `http://${bucket}.s3-website.${region}.amazonaws.com`;
+  core.setOutput('url', url);
 }
 
 run();
