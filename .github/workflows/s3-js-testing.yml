@@ -8,4 +8,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Run Custom Action
-        uses: ./.github/actions/deploy-to-s3
+        uses: ./.github/actions/deploy-s3-js
