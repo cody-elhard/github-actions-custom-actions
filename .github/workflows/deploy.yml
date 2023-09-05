@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
-      - name: Log code
-        run: ls
+      - name: Log github workflows code
+        run: ls .github/actions
       - name: Setup Project
         uses: ./.github/actions/setup/action.yml
         with:
