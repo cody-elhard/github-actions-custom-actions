@@ -12,12 +12,17 @@ jobs:
       - name: Log github workflows code
         run: ls ./.github/actions/setup
       - name: Setup Project
+        id: setup
         uses: ./.github/actions/setup
         with:
           caching: 'true'
+
+      - name: Output whether caching was used
+        run: echo "Caching was used:" ${{ steps.setup.outputs.caching }}
+
       - name: Lint code
         run: npm run lint
-
+ 
   test:
     runs-on: ubuntu-latest
     steps:
