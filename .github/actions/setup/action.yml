@@ -1,5 +1,5 @@
 name: 'Setup Project'
-description: 'Checks out code, caches and installs dependencies'
+description: 'caches and installs dependencies'
 
 inputs: 
   node-path:
