@@ -11,6 +11,7 @@ outputs:
   used-cache:
     description: 'whether the cache was used'
     value: ${{ steps.install.outputs.caching }}
+    default: 'false'
 
 runs:
   using: "composite"
