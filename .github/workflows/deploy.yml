@@ -12,7 +12,7 @@ jobs:
       - name: Log github workflows code
         run: ls ./.github/actions/setup
       - name: Setup Project
-        uses: ./.github/actions/setup/action.yml
+        uses: ./.github/actions/setup
         with:
           node-path: node_modules
       - name: Lint code
