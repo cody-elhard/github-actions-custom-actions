@@ -22,10 +22,15 @@ runs:
       with:
         path: node_modules
         key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
+
+    # New format for setting outputs
+    # - name: Set output
+    #   run: echo "{name}={value}" >> $GITHUB_OUTPUT
+
     - name: Install dependencies
       id: install
       if: steps.cache.outputs.cache-hit != 'true' || inputs.caching == 'false'
       run: |
-        echo 'set-output caching=${{ inputs.caching }}'
+        echo "{caching}={inputs.caching}" >> $GITHUB_OUTPUT
         npm ci
       shell: bash
