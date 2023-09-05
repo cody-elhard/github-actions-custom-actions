@@ -31,6 +31,6 @@ runs:
       id: install
       if: steps.cache.outputs.cache-hit != 'true' || inputs.caching == 'false'
       run: |
-        echo "{caching}={inputs.caching}" >> $GITHUB_OUTPUT
         npm ci
+        echo "{caching}={inputs.caching}" >> $GITHUB_OUTPUT
       shell: bash
