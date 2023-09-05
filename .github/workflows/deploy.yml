@@ -18,7 +18,7 @@ jobs:
           caching: 'true'
 
       - name: Output whether caching was used
-        run: echo "Caching was used:" ${{ steps.setup.outputs.caching }}
+        run: echo "Caching was used:" ${{ steps.setup.outputs.used-cache }}
 
       - name: Lint code
         run: npm run lint
