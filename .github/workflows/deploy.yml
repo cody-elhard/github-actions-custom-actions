@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Project
-        uses: ./github/actions/setup/action.yml
+        uses: ./.github/actions/setup/action.yml
         with:
           node-path: node_modules
       - name: Lint code
