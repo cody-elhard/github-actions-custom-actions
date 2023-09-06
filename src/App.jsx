@@ -8,7 +8,9 @@ function App() {
         <div id="logo-img">
           <img src={logo} />
         </div>
-        <h1>My Awesome updates</h1>
+        <h1>
+          Yo Jaryd Check this out
+        </h1>
       </header>
       <MainContent />
     </>
